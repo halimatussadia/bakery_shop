@@ -45,7 +45,7 @@ body a{
 .top-header-left ul{
 	margin:0;
 	padding:0;
-} 
+}
 .top-header-left ul li{
 	display:inline-block;
 	float:left;
@@ -116,7 +116,7 @@ body a{
 	padding: 0 0.8em;
 	margin: 0.5em 0;
 	display: block;
-	
+
 }
 .top-header-right ul li:nth-child(3) a{
 	border-right:none;
@@ -129,7 +129,7 @@ body a{
 	padding-top: 1em;
 	position: relative;
 	z-index:999;
-} 
+}
 .head-nav ul{
 	padding: 0;
 	width: 85%;
@@ -143,7 +143,7 @@ body a{
 	color: #FFF;
 	font-weight: 600;
 	text-transform: uppercase;
-	font-size: 1.3em;
+	font-size: 1.1em;
 	text-decoration: none;
 	display: block;
 	padding:  1.23em 1.5em;
@@ -372,7 +372,7 @@ a.buy-btn{
 	-o-border-radius:0.3em;
 }
 a.buy-btn:hover{
-	
+
 }
 .share-on{
 	background: rgba(90, 15, 22, 0.36);
@@ -469,7 +469,7 @@ a.btn{
 	background: -o-radial-gradient(center, ellipse cover, rgb(78,2,5) 0%,rgb(146,59,79) 50%,rgb(78,2,5) 100%);
 	background: -ms-radial-gradient(center, ellipse cover, rgb(78,2,5) 0%,rgb(146,59,79) 50%,rgb(78,2,5) 100%);
 	background: radial-gradient(ellipse at center, rgb(78,2,5) 0%,rgb(146,59,79) 50%,rgb(78,2,5) 100%);
-	
+
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e0205', endColorstr='#4e0205',GradientType=1 );
 	padding: 0.7em 0em;
 	color: #FFF;
@@ -489,7 +489,7 @@ a.btn:hover{
 	color:#FFF;
 }
  .u_info a.btn{
- 	float: right; padding: 5px 0; width:60px; 
+ 	float: right; padding: 5px 0; width:60px;
  }
  .row-centered button{
  	background:#a50c4d;
@@ -541,7 +541,7 @@ a.btn:hover{
 .bottom-grid-left-grid p{
 	color:#814b68;
 	font-weight:700;
-	
+
 }
 .bottom-grid-right{
 	border: 2px solid #FFF;
@@ -663,7 +663,7 @@ a.order:hover{
 	text-align:center;
 }
 .face-b{
-	margin:1em 0em; 
+	margin:1em 0em;
 	position:relative;
 }
 .sign form input[type="text"] {
@@ -677,7 +677,7 @@ a.order:hover{
 	font-weight: 400;
 	text-indent: 10px;
 	border: 1px solid #FC6294;
-	border-radius: 3px; 
+	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-o-border-radius: 3px;
@@ -911,7 +911,7 @@ i.twt:hover{
 }
 .biseller-column:hover {
 	background:#fff;
-	
+
 }
 .biseller-column:hover div.veiw-img-mark{
 	display: block;
@@ -993,10 +993,10 @@ i.white-cart1{
 }
 .col:first-child{
 	margin-left:0;
-}	
+}
 .span_2_of_3 {
 	width: 59.1%;
-	padding:1.5%; 
+	padding:1.5%;
 }
 .span_1_of_3 {
 	width:39.2%;
@@ -1033,7 +1033,7 @@ i.white-cart1{
 }
 .contact-form textarea{
 		resize:none;
-		height:120px;		
+		height:120px;
 }
 .contact-form input[type="submit"]{
 	background: #FD6093;
@@ -1378,7 +1378,7 @@ ul.women_pagenation li a:hover{
 }
 .login-page {
 	padding: 7em 0;
-} 
+}
 /*--account--*/
 .span_1_of_account{
 	width: 47.2%;
@@ -1615,7 +1615,7 @@ background: #fff;
 	list-style-type: none;
 	padding:0;
 	margin:1em 0em;
-}	
+}
 .span_1_of_4  h3{
 	color: #5A0F16;
 	margin-bottom: 0.5em;
@@ -1637,7 +1637,7 @@ background: #fff;
 	color:#FB6193;
 	font-size:1em;
 	display:block;
-	padding:10px 0;	
+	padding:10px 0;
 	clear:both;
 	line-height:1.8em;
 }
@@ -1663,7 +1663,7 @@ background: #fff;
 	display: block;
 	float:right;
 	margin-left:3.333%;
-} 	
+}
 .span_2_of_bottom {
 	width: 66.1%;
 }
@@ -1935,10 +1935,10 @@ p.product_descr {
 }
 .span_1_of_3 a:hover{
 	text-decoration:none;
-}	
+}
 p.price1{
 	margin-top:10px;
-}	
+}
 h3.m_1{
 	font-size:1.5em;
 	font-weight: 800;
@@ -2034,7 +2034,7 @@ ul.tags_links li a:hover{
 	margin: 1.23em 1em;
 }
 .slider-caption-left h1 {
-	font-size: 2em; 
+	font-size: 2em;
 }
 .callbacks_nav {
 	top: 23%;
@@ -2213,7 +2213,7 @@ h4.title {
 	top:22px;
 	left:14px;
 	cursor:pointer;
-}	
+}
 .head-nav span.menu:before{
 	content:url(../images/menu.png);
 	color:#FFF;

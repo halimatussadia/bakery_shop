@@ -1,10 +1,10 @@
 @extends('master')
-@section('content') 
+@section('content')
       <style>
   h1{
     text-align: center;
-  };
-  
+  }
+
 </style>
 @if(session()->has('message'))
 <div class="alert alert-success">
@@ -14,10 +14,10 @@
 
 
  <h1>Customer Details</h1>
-        
+
                     <div class="table-responsive">
                     <table id="Table" class="table table-striped table-bordered" >
-                      <thead>  
+                      <thead>
                        <tr>
                         <th>Serial</th>
                         <th>Name</th>
@@ -26,23 +26,23 @@
                         <th>Address</th>
                         <th>Contact Number</th>
                         <th>Action</th>
-                      </tr>                                                   
-                                          
+                      </tr>
+
                       </thead>
                       <tbody>
-                       
+
                         @foreach($all_users as $key=>$data)
 
                         <tr>
                           <td>{{$key+1}}</td>
                           <td>{{$data->name}}</td>
                           <td>{{$data->email}}</td>
-                          <td>{{$data->district}}</td> 
+                          <td>{{$data->district}}</td>
                           <td>{{$data->address}}</td>
                           <td>{{$data->number}}</td>
-                          <td> 
+                          <td>
                             <a href="{{route('delete.user',$data->id)}}" class="btn btn-danger">Delete</a>
-                             
+
                             <a href="{{route('edit.user',$data->id)}}" class="btn btn-info">Edit</a>
                             </td>
                         </tr>

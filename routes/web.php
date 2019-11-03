@@ -35,7 +35,6 @@ Route::get('/orders','frontend\OrderController@showOrder')->name('orders');
 Route::post('/postorders','frontend\OrderController@doOrder')->name('orders.post');
 Route::get('/orders/delete/{id}','frontend\OrderController@deleteOrder')->name('delete.order');
 
-
 Route::get('/product/customize/{id}','frontend\ProductController@productcustomize')->name('productcustomize');
 
 
@@ -75,7 +74,6 @@ Route::get('/users/edit/{id}', 'backend\BackendController@editUsers')->name('edi
 Route::post('/users/update/{id}', 'backend\BackendController@updateUsers')->name('update.user');
 
 
-
 Route::get('/categories', 'backend\CategoryController@showCategories')->name('categories');
 Route::post('/categories','backend\CategoryController@categoryform')->name('categoryform');
 Route::get('/categories/edit/{id}','backend\CategoryController@editCategory')->name('edit.category');
@@ -91,6 +89,11 @@ Route::get('/order/details/{id}.php','backend\OrderdetailController@showdetails'
 
 Route::get('/customize/{id}','backend\CustomizeController@customize')->name('customize');
 Route::get('/report','backend\ReportController@reportgenerate')->name('report');
+
+
+Route::get('/payments/{id}','backend\PaymentController@index')->name('payments');
+Route::get('/payments/details/{id}','backend\PaymentController@show');
+
 
 });
 

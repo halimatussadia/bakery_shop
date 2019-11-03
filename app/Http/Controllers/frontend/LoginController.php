@@ -19,8 +19,8 @@ class LoginController extends Controller
 	{
 
 		 $credentials = $request->only('role','email', 'password');
-			// dd($request->all());
-
+			//dd($request->all());
+        //dd(Auth::attempt($credentials));
         if (Auth::attempt($credentials)) {
 
             //dd($credentials);
@@ -38,10 +38,10 @@ class LoginController extends Controller
         {
 
         session()->flash('message','Invalid');
-         return redirect()->back();  
+         return redirect()->back();
         }
     }
-	
+
    public function logout(){
 
    	Auth::logout();

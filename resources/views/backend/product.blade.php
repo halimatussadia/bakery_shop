@@ -1,10 +1,10 @@
 @extends('master')
-@section('content') 
+@section('content')
       <style>
   h1{
     text-align: center;
-  };
-  
+  }
+
 </style>
 @if(session()->has('message'))
         <div class="alert alert-success">
@@ -26,10 +26,10 @@
  <h1>Products Details</h1>               <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Add New
-</button></br></br>           
+</button><br><br>
  <div class="table-responsive">
                     <table id="order" class="table table-striped table-bordered">
-                      <thead>  
+                      <thead>
                        <tr>
                         <th>Serial</th>
                         <th>Category_Name</th>
@@ -39,8 +39,8 @@
                         <th>Price</th>
                         <th>Status</th>
                         <th>Action</th>
-                      </tr>                                             
-                                          
+                      </tr>
+
                       </thead>
                       <tbody>
                        @foreach($all_products as $key=>$data)
@@ -48,7 +48,7 @@
                           <td>{{$key+1}}</td>
                           <td>{{$data->category->name}}</td>
                           <td>{{$data->product_name}}</td>
-                          <td>{{$data->type}}</td> 
+                          <td>{{$data->type}}</td>
                           <td><img src="{{url('/product_image/'.$data->product_image)}}" style="height: 80px;width: 80px;"></td>
 
                           <td>{{$data->price}}</td>
@@ -57,8 +57,8 @@
                             <button type="button" class="btn btn-success">Active</button>
                             @else<button type="button" class="btn btn-warning">Inactive</button>
                             @endif
-                          </td> 
-                          <td> 
+                          </td>
+                          <td>
                             <a href="{{route('edit.product',$data->id)}}" class="btn btn-info">Edit</a>
                           </td>
                         </tr>
@@ -80,27 +80,27 @@
       </div>
       <div class="modal-body">
         <form action="{{route('productform')}}" method="post" role="form" enctype="multipart/form-data">
-         @csrf 
-        <div class="form-group">    
+         @csrf
+        <div class="form-group">
            <label for="name">Product_Name:</label>
           <input class="form-control" id="name" type="text" name="product_name" required />
         </div>
-        <div class="form-group">    
+        <div class="form-group">
            <label for="name">Product_Type:</label>
-           <select class="form-control" id="category"  name="type" required />
+           <select class="form-control" id="category"  name="type" required >
                 <option value="regular">Regular</option>
                 <option value="customize">Customize</option>
             </select>
         </div>
-        <div class="form-group">    
+        <div class="form-group">
            <label for="name">Product_Image:</label>
           <input class="form-control" id="name" type="file" name="product_image" required />
         </div>
-         <div class="form-group">    
+         <div class="form-group">
            <label for="name">Flavour:</label>
           <input class="form-control" id="name" type="text" name="flavour" />
         </div>
-         <div class="form-group">    
+         <div class="form-group">
            <label for="name">Product_Weight:</label>
           <input class="form-control" id="name" type="text" name="weight" required />
         </div>
@@ -110,8 +110,8 @@
         </div>
         <div class="form-group">
            <label for="category">Select Category:</label>
-            <select class="form-control" id="category"  name="category_id" required />
-              
+            <select class="form-control" id="category"  name="category_id" required >
+
               @foreach($categories as $category)
                 <option value="{{$category->id}}">{{$category->name}}</option>
                  @endforeach

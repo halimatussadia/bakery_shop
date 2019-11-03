@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\frontend;
 
+use App\Model\Payment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Order;
@@ -11,7 +12,8 @@ use Carbon\Carbon;
 class OrderController extends Controller
 {
      public function showOrder(){
-     	$cart_info=Cart::with('hasProducts')->where('user_id',auth()->user()->id)->where('status','pending')->get();
+     	$cart_info = Cart::with('hasProducts')->where('user_id',auth()->user()->id)
+            ->where('status','pending')->get();
      	//dd($cart_info);
     return view ('frontend.order',compact('cart_info'));
 
@@ -19,37 +21,44 @@ class OrderController extends Controller
 
     public function doOrder(Request $request){
 
-		$cart_info=Cart::with('hasProducts')->where('user_id',auth()->user()->id)->where('status','pending')->get();
+		$cart_info = Cart::with('hasProducts')->where('user_id',auth()->user()->id)->where('status','pending')->get();
 
 		$total = $cart_info->sum('sub_total');
-		
-		
-    $orderNo='OR_ID-'.date('YmdHis',strtotime(Carbon::now()));
-		$order = Order::create([
-			'user_id' =>auth()->user()->id,
-			'order_no'=> $orderNo,
-			'total' =>$total,
-			'date' =>$request->input('date'),
-			'time' =>$request->input('time'),
-			'payment' =>$request->input('payment'),
-			'delivery' =>$request->input('delivery')
-		]);
 
+
+    $orderNo = 'OR_ID-'.date('YmdHis',strtotime(Carbon::now()));
+		$order = Order::create([
+			'user_id' => auth()->user()->id,
+			'order_no'=> $orderNo,
+			'total'   => $total,
+			'date'    => $request->input('date'),
+			'time'    => $request->input('time'),
+			'payment' => $request->input('payment'),
+			'delivery'=> $request->input('delivery')
+		]);
 		foreach ($cart_info as $product) {
 			//dd($product);
 			$order->orderDetails()->create([
-				'product_id'=> $product->product_id,
-				'unit_price'=> $product->unit_price,
-				'sub_total' => $product->sub_total,
-				'qunt'      => $product->qunt,
-				'type'      =>$product->type,
-		        'details'   =>$product->details,
+				'product_id' => $product->product_id,
+				'unit_price' => $product->unit_price,
+				'sub_total'  => $product->sub_total,
+				'qunt'       => $product->qunt,
+				'type'       => $product->type,
+		        'details'    => $product->details,
+
 			]);
+
+                Payment::create([
+                    'order_id' => $order->id,
+                    'transaction_id'  =>  $orderNo,
+                    'payment' =>$request->input('payment'),
+                    'pay_amount'     =>$request->input('pay_amount'),
+                ]);
 
 		}
 		Cart::where('user_id',auth()->user()->id)->where('status','pending')->delete();
         session()->flash('message','Thank you for order!');
-    	return redirect()->back(); 
+    	return redirect()->back();
     }
     // public function deleteOrder($id){
     // 	DB::table('carts')->where('id',$id)->delete();

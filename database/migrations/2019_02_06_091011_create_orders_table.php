@@ -14,7 +14,7 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->integer('user_id');
             $table->string('total');
             $table->string('order_no')->nullable();
@@ -24,7 +24,7 @@ class CreateOrdersTable extends Migration
             $table->string('delivery');
             $table->string('status')->default('pending');
             $table->string('is_completed')->default(0);
-             $table->string('paid')->default(0)
+            $table->string('paid')->default(0);
             $table->timestamps();
         });
     }

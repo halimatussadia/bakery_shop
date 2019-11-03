@@ -7,7 +7,7 @@
             {{ session()->get('message') }}
         </div>
     @endif
-    
+
 <div class="container order_wrap">
 	<div class="row">
 
@@ -18,7 +18,7 @@
 				<h3>Order Summery:</h3>
 				<table class="table order_summery">
 				<tr>
-					
+
 					<th>Product Name</th>
 					<th>Product_type</th>
 			        <th style="max-width: 200px">Product_details</th>
@@ -68,7 +68,7 @@
 				</tr>
 				<!-- End Loop -->
 			</table>
-			
+
 			    <section>
 					<button type="submit" class="btn btn-primary">Order Confirm</button>
 			    </section>
@@ -78,7 +78,7 @@
 
 		<div class="col-md-4">
 			<div class="delivery_info">
-				
+
 				<h3>Terms&Conditions</h3>
 				<section>
 					<p>->Inside Dhaka Delivery will be tk.60 </p>
@@ -87,39 +87,34 @@
 					<p>->Sold food items cannot be changed, returned or refunded.</p>
 				</section>
 				<h3>Payment Method</h3>
-				<section>
-					<label for="payment">How you want to payment:</label> 
+					<label for="payment">How you want to payment:</label>
 					<select type="text" name="payment" id="payment" required>
-			
-					<option value="Cash In Delevery">Cash In Delevery</option>	
-					</select>  
-				</section>
-				<section class="odr_time">
+                        <option value="bkash">Bkash - 01711111</option>
+                        <option value="rocket">Rocket - 01714545</option>
+					    <option value="Cash In Delevery">Cash In Delevery</option>
+					</select>
+                <div class="reg_frm">
+                    <label for="email"><b>Pay Amount</b></label>
+                    <input type="number" id="email" placeholder="Enter Amount" name="pay_amount" required/>
+                </div>
+                <section class="odr_time">
 					<label for="appt">Choose a Date for Delevery:</label>
 					<input type="date" id="start" name="date" value="{{ date('Y-m-d')}}" min="{{ date('Y-m-d')}}" />
 
 					<label for="appt">Choose a Time for Delevery:</label>
 					<input type="time" id="appt" name="time" value="13:30" required />
-				</section></br>	
+				</section></br>
 					<h3>Delivery Method</h3>
 				<section>
 					<label for="id">How you want to get this product:</label>
 					<select type="text" name="delivery" id="id" required>
 					<option value="Pickup">Pickup</option>
-					<option value="Delivery">Delivery</option>	
-					</select>  
+					<option value="Delivery">Delivery</option>
+					</select>
 				</section>
 			</div><!-- .prod_custom -->
 		</div>
 	</form>
 	</div>
 </div>
-
-
-
-
-
-
-
-
 @include('frontend.partial.footer')

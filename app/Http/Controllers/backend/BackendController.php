@@ -23,7 +23,7 @@ class BackendController extends Controller
         $data=[
                //'database column name'=>'form input field name'
                'name'=>$request->input('name'),
-               'role'=>$request->input('role'), 
+               'role'=>$request->input('role'),
                'email'=>$request->input('email'),
                'district'=>$request->input('district'),
                'address'=>$request->input('address'),
@@ -35,19 +35,19 @@ class BackendController extends Controller
 
         session()->flash('message','Registration Successful');
          return redirect()->back();
-         
-        
-    } 
-    
+
+
+    }
+
 
     public function dashboard(){
       return view ('backend.dashboard');
-    } 
-  
-  
+    }
+
+
 	    public function showUsers(){
-        
-      $all_users=User::orderBy('id', 'desc')->where('id','!=',10)->get();
+
+      $all_users=User::orderBy('id', 'desc')->where('id','!=',12)->get();
       //dd($all_users);
       return view ('backend.users',compact('all_users'));
 
@@ -73,7 +73,7 @@ class BackendController extends Controller
       public function updateUsers(Request $request,$id){
 
         User::where('id',$id)->update([
-               'name'=>$request->input('name'), 
+               'name'=>$request->input('name'),
                'email'=>$request->input('email'),
                'district'=>$request->input('district'),
                'address'=>$request->input('address'),
@@ -84,9 +84,9 @@ class BackendController extends Controller
         return redirect('/admin/users')->with('message','Customer info Update Successfully');
 
       }
-      
+
 }
 
 
- 
+
 
