@@ -9,7 +9,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'product_name' => $faker->name,
         'product_no' => $faker->randomDigit,
         'type' => 'Regular',
-        'product_image' => $faker->imageUrl(),
+        'product_image' => $faker->imageUrl(500,500),
         'flavour' => 'cocholate',
         'weight' => 5,
         'price'  =>1000.00,

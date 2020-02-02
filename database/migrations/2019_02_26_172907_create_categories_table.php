@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->String('name',64);
             $table->String('category_no')->nullable();
-            $table->String('description');
+            $table->text('description');
             $table->String('image') ;
             $table->string('status')->default('active');
             $table->rememberToken();
